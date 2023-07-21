@@ -1,23 +1,26 @@
 <template>
   <form action="#" @submit.prevent>
     <h4>Создать пост</h4>
-      <input 
+      <app-input 
       type="text" 
       v-model="post.title"  
     />
-    <input 
+    <app-input
       type="text" 
       v-model="post.body"  
    />
-    <button type="submit" class="btn-send"
+    <app-button 
+      type="submit" 
+      class="btn-send"
       @click="createPost"
-    >Создать</button>
+    >Создать</app-button>
   </form>
 </template>
 <script>
+import AppIput from './UI/AppInput.vue';
 export default {
    name:'post-form',
-  components: {},
+  components: {AppIput},
   data() {
     return {
       post:{
@@ -48,16 +51,9 @@ form *{
   /* display: flex; */
   margin-top: 8px;
 }
-input{
-  width: 100%;
-  padding: 4px 16px;
-  outline: none;
-  border: 2px solid teal;
-}
+
 .btn-send{
   align-self: flex-end;
-  background-color: transparent;
-  border:1px solid teal;
-  padding: 4px 8px;
 }
+
 </style>
