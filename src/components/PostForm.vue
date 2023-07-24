@@ -1,13 +1,17 @@
 <template>
-  <form action="#" @submit.prevent>
+  <form  @submit.prevent>
     <h4>Создать пост</h4>
       <app-input 
+      name="title"
       type="text" 
       v-model="post.title"  
+      autocomplete="off"
     />
     <app-input
+      name="body"
       type="text" 
       v-model="post.body"  
+      autocomplete="off"
    />
     <app-button 
       type="submit" 
